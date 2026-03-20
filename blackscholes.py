@@ -94,7 +94,7 @@ def theta(is_call: bool):
     return -diff(callprice(), T) if is_call else -diff(putprice(), T)
 
 def vega(is_call: bool=True):
-    # NOTE: call and put prices yield the same gamma
+    # NOTE: call and put prices yield the same vega
     #+but the option to print using either is for any
     #+possible arbitrage opportunity
     return diff(callprice(), vol) if is_call else diff(putprice(), vol)
