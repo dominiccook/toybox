@@ -45,17 +45,6 @@ import argparse
 S, K, r, vol, T = symbols('S, K, r, vol, T', real = True)
 
 # --- List of Sympy-ified Methods ---
-def implied_volatility(
-        spot: float=28,
-        strike: float=30,
-        rate: float=0.05,
-        horizon: int=1,
-) -> float:
-    optprices = 10.89
-    F = lambda x: np.abs(callprice(S, K, r, x, T) - optprices)
-    o = optimize.fmin(func=F, x0=[0.15])
-    return o
-
 def d1():
     # this is the d1 from the black-scholes-merton model
     # i don't really know what it is....
